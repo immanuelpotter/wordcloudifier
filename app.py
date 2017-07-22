@@ -10,7 +10,7 @@ signal.signal(signal.SIGINT, lambda s, f: os._exit(0))
 @app.route("/")
 def generate_wordcloud():
 	page = '<html><body><h1>Welcome to the wordcloud generator!</h1><h2>Enter some text.</h2>'
-	page += wordcloudifier
+	page += wordcloudifier.myFunc()
 	page += '</body></html>'
 	return page
 
