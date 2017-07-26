@@ -1,6 +1,5 @@
 import unittest
-
-from program import wordcloudifier
+import wordcloudifier
 
 def test_function_actually_works():
 	wordcloudifier.myFunc()
