@@ -1,4 +1,5 @@
-#ake in user's long string of input, run the text against nltk, spit out a wordcloud
+#!/usr/bin/env python
+#Take in user's long string of input, run the text against nltk, spit out a wordcloud
 import re
 import wordcloud as wc
 import matplotlib.pyplot as plt
