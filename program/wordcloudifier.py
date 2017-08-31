@@ -31,8 +31,4 @@ def addStopwords(words):
 		stopwords_list += toAdd
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-	myFunc()	
-=======
 	myFunc()
->>>>>>> 6743488c9b2b63d736b3b600be99b2dff4c6cf13
