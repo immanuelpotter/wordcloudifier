@@ -29,5 +29,5 @@ def addStopwords(words):
 	if toAdd not in stopwords_list:
 		stopwords_list += toAdd
 
-if __name__ == __main__:
+if __name__ == "__main__":
 	myFunc()	
