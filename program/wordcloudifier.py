@@ -1,7 +1,9 @@
+#!/usr/bin/env python
 #Take in user's long string of input, run the text against nltk, spit out a wordcloud
 import re
 import wordcloud as wc
 import matplotlib.pyplot as plt
+
 def myFunc():
 	stopwords = open('stopwords.txt').read()
 	stopwords_list = stopwords.split()
@@ -16,7 +18,6 @@ def myFunc():
 	for i in nopuncSplit:
 		if i in stopwords_list:
 			nopuncSplit.remove(i)
-
 	wordcloud = wc.WordCloud(width=1000, height=500).generate(' '.join(nopuncSplit))
 
 	plt.figure(figsize=(15,8))
@@ -30,4 +31,8 @@ def addStopwords(words):
 		stopwords_list += toAdd
 
 if __name__ == "__main__":
+<<<<<<< HEAD
 	myFunc()	
+=======
+	myFunc()
+>>>>>>> 6743488c9b2b63d736b3b600be99b2dff4c6cf13
