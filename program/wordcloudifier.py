@@ -4,31 +4,46 @@ import re
 import wordcloud as wc
 import matplotlib.pyplot as plt
 
-def myFunc():
-	stopwords = open('stopwords.txt').read()
-	stopwords_list = stopwords.split()
+def read_stopwords(stopwords_file):
+    try:
+        stopwords = open(stopwords_file).read()
+        stopwords_list = stopwords.split()
+        return stopwords_list
+    except IOError:
+        return "That's not a text file!"
 
-#Cleaning text for no punctuation.
-	text = str(raw_input("Enter your text here."))
-	lowercase = text.lower()
-	nopunc = re.sub(r'[-./?!,":;()\']', ' ', lowercase)
-	nopuncSplit = nopunc.split()
+def user_text_and_clean():
+    text = str(raw_input("Enter your text here.\n"))
+    lowercase = text.lower()
+    noPunc = re.sub(r'[-./?!,":;()\']', ' ', lowercase)
+    noPuncSplit = noPunc.split()
+    return noPuncSplit
 
-#Need to iterate through these words and match which AREN'T in stopwords list
-	for i in nopuncSplit:
-		if i in stopwords_list:
-			nopuncSplit.remove(i)
-	wordcloud = wc.WordCloud(width=1000, height=500).generate(' '.join(nopuncSplit))
+def iterate():
+    #Need to iterate through these words and match which AREN'T in stopwords list
+    user_words=user_text_and_clean()
+    stopwords_list=read_stopwords('stopwords.txt')
+    i = 0
+    n = len(list(user_words))
+    while i < n:
+        element = user_words[i]
+	if element in stopwords_list:
+            del user_words[i]
+            n = n-1
+        else:
+            i = i+1
+    return user_words
 
-	plt.figure(figsize=(15,8))
-	plt.imshow(wordcloud)
-	plt.axis("off")
-	plt.show()
 
-def addStopwords(words):
-	toAdd = words.split()
-	if toAdd not in stopwords_list:
-		stopwords_list += toAdd
+def display():
+    user_words = iterate()
+    wordcloud = wc.WordCloud(width=1000, height=500).generate(' '.join(list(user_words)))
+
+    plt.figure(figsize=(15,8))
+    plt.imshow(wordcloud)
+    plt.axis("off")
+    plt.show()
+
 
 if __name__ == "__main__":
-	myFunc()
+    display()
