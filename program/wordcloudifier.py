@@ -5,7 +5,7 @@ import wordcloud as wcld
 import matplotlib.pyplot as plt
 
 class Wordcloudifier:
-    def __init__(self,stopwords,user_words):
+    def __init__(self,stopwords):
         try:
             stopwords_list = open(stopwords).read().split()
             self.stopwords_list = stopwords_list
@@ -50,7 +50,7 @@ class Wordcloudifier:
 
 
 if __name__ == "__main__":
-    wc = Wordcloudifier('stopwords.txt',None)
+    wc = Wordcloudifier('stopwords.txt')
     wc.user_text_and_clean()
     wc.iterate()
     wc.display()
