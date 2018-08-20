@@ -1,14 +1,12 @@
 #wordcloudifier
-Python application and deployment for wordcloud-ifying some input text
 
-TODO:
+### Python application and deployment for wordcloud-ifying some input text
 
-Sort out the webification of the program. Works in venv but not on local machine despite having requirements installed (it works on my machine!)... Probably missed something so will revisit this
+### TODO:
 
-Permissions issue? Path problem? "wordcloud" should be on the path already - what is difference between venv and host that is causing this?
-
-Dockerize
-
-Dockerhub
-
-Deploy to Heroku/Amazon
+* OO refactor of program code - DONE
+* Better test suite - DOING
+* Fix up Flask to work properly
+* Dockerize
+* Dockerhub
+* Deploy to Heroku/Amazon
