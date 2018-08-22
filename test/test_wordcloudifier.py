@@ -26,7 +26,19 @@ class TestWordcloudifierMethods(unittest.TestCase):
         wc = wcld.Wordcloudifier('../program/stopwords.txt')
         wc.user_text_and_clean()
         # Need automated way of adding user input text here
-        assert wc.get_user_words() is not None
+        # tmpvar to hold first batch of user words
+        tmp = wc.get_user_words
+        assert tmp is not None
+        # user words should change now
+        wc.iterate()
+        new = wc.get_user_words()
+        assert tmp is not new
+
+    def test_display(self):
+        wc = wcld.Wordcloudifier('../program/stopwords.txt')
+        wc.user_text_and_clean()
+        wc.iterate()
+        wc.display()
 
 #    def test_bad_constructor(self):
 #        try:
