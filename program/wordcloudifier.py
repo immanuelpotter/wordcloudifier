@@ -8,10 +8,10 @@ class Wordcloudifier:
     def __init__(self,stopwords):
         try:
             stopwords_list = open(stopwords).read().split()
-            self.stopwords_list = stopwords_list
-            self.user_words = None
         except IOError:
             return "That's not a file!"
+        self.stopwords_list = stopwords_list
+        self.user_words = None
 
     def user_text_and_clean(self):
         text = str(raw_input("Enter your text here.\n"))
