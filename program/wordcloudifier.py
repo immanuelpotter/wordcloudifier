@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #Take in user's long string of input, run the text against nltk, spit out a wordcloud
 import re
+import time
 import wordcloud as wcld
 import matplotlib.pyplot as plt
 
@@ -46,7 +47,9 @@ class Wordcloudifier:
         plt.figure(figsize=(15,8))
         plt.imshow(wordcloud)
         plt.axis("off")
-        plt.show()
+        plt.pause(10)
+       # time.sleep(5)
+        plt.close()
 
 
 if __name__ == "__main__":
