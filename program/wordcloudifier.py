@@ -51,9 +51,11 @@ class Wordcloudifier:
        # time.sleep(5)
         plt.close()
 
+    def main():
+        wc = Wordcloudifier('stopwords.txt')
+        wc.user_text_and_clean()
+        wc.iterate()
+        wc.display()
 
 if __name__ == "__main__":
-    wc = Wordcloudifier('stopwords.txt')
-    wc.user_text_and_clean()
-    wc.iterate()
-    wc.display()
+    main()
